@@ -5,7 +5,6 @@ import io.netty.channel.ChannelFuture;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.channel.socket.nio.NioSocketChannel;
 
 /**
  * @author Lee
@@ -20,7 +19,7 @@ public class TestServer {
         try{
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             serverBootstrap.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class)
-                    .childHandler(new TestServerInitializerHandler());
+                    .childHandler(new TestServerInitializer());
 
             System.out.println("服务端启动，端口:8090");
 

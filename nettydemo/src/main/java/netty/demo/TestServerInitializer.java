@@ -10,7 +10,7 @@ import io.netty.handler.codec.http.HttpServerCodec;
  * @author Lee
  * date:2019-07-16
  */
-public class TestServerInitializerHandler extends ChannelInitializer<SocketChannel> {
+public class TestServerInitializer extends ChannelInitializer<SocketChannel> {
 
     @Override
     protected void initChannel(SocketChannel socketChannel) throws Exception {
