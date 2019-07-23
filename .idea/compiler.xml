@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="nettydemo" target="1.5" />
+      <module name="nettydemo" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
