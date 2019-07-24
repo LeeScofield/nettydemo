@@ -6,6 +6,7 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.ServerChannel;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.ServerSocketChannel;
+import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
 /**
@@ -22,9 +23,10 @@ public class MyChatSever {
         try{
 
             ServerBootstrap bootstrap = new ServerBootstrap();
-            bootstrap.group(bossGroup, workerGroup).channel(ServerSocketChannel.class)
-                    .channel(null);
+            bootstrap.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class)
+                    .childHandler(new MyChatServerInitializer());
 
+            System.out.println("服务端 端口：8090");
             ChannelFuture channelFuture = bootstrap.bind(8090).sync();
             channelFuture.channel().closeFuture().sync();
 
