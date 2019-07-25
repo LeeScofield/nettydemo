@@ -18,6 +18,7 @@ public class MyChatServerHandler extends SimpleChannelInboundHandler<String> {
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
         Channel channel = ctx.channel();
+
         System.out.println(channelGroup.size());
         channelGroup.forEach(ch -> {
 

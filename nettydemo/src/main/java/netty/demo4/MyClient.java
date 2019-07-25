@@ -1,10 +1,9 @@
-package netty.demo3;
+package netty.demo4;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
-import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
 import java.io.BufferedReader;
@@ -14,7 +13,7 @@ import java.io.InputStreamReader;
  * @author Lee
  * date:2019-07-24
  */
-public class MyChatClient {
+public class MyClient {
 
     public static void main(String[] args) throws Exception{
 
@@ -24,7 +23,7 @@ public class MyChatClient {
 
             Bootstrap bootstrap = new Bootstrap();
             bootstrap.group(eventLoopGroup).channel(NioSocketChannel.class)
-                    .handler(new MyChatClientInitializer());
+                    .handler(new MyClientInitializer());
 
             Channel channel = bootstrap.connect("localhost", 8090).sync().channel();
 
