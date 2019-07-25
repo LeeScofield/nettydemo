@@ -12,6 +12,7 @@ import java.util.UUID;
  */
 public class MyServerHandler extends SimpleChannelInboundHandler<String> {
 
+    @Override
     protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
 
         System.out.println(ctx.channel().remoteAddress() + "," + msg );
