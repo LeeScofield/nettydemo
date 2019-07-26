@@ -23,7 +23,6 @@ message Message{
     }
 }
 
-
 message Dog{
     optional string name = 1;
     optional string food = 2;
