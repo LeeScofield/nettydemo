@@ -23,6 +23,19 @@
             <version>4.1.10.Final</version>
         </dependency>
 
+
+        <!--https://github.com/protocolbuffers/protobuf/tree/master/java-->
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>3.8.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java-util</artifactId>
+            <version>3.8.0</version>
+        </dependency>
     </dependencies>
 
 </project>

@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package netty.demo6.protobuf.model;
+
+option optimize_for = SPEED;
+option java_package = "netty.demo6.protobuf.model";
+option java_outer_classname = "AddressBookProtos";
+
+
+message person{
+
+    required string name = 1;
+    optional int32 age = 2;
+    optional string address = 3;
+
+}
+

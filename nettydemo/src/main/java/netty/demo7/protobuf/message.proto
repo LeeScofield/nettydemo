@@ -1,0 +1,40 @@
+syntax = "proto2";
+
+package java.netty.demo7.model;
+
+option optimize_for = SPEED;
+option java_package = "netty.demo7.protobuf.model";
+option java_outer_classname = "MyDataInfo";
+
+message Message{
+
+    enum AnimalType{
+        DogType = 1;
+        CatType = 2;
+        RabbitType = 3;
+    }
+
+    required AnimalType animalType = 1;
+
+    oneof AnimalData{
+        Dog dog = 2;
+        Cat cat = 3;
+        Rabbit rabbit = 4;
+    }
+}
+
+
+message Dog{
+    optional string name = 1;
+    optional string food = 2;
+}
+
+message Cat{
+    optional string name = 1;
+    optional int32 age = 2;
+}
+
+message Rabbit{
+    optional string name = 1;
+    optional string home = 2;
+}
