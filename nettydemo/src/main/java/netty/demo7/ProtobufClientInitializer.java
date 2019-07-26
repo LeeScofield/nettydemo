@@ -7,7 +7,8 @@ import io.netty.handler.codec.protobuf.ProtobufDecoder;
 import io.netty.handler.codec.protobuf.ProtobufEncoder;
 import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder;
 import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
-import netty.demo6.protobuf.model.AddressBookProtos;
+import netty.demo7.protobuf.model.MyDataInfo;
+
 
 /**
  * Created by Lee on 2019-07-26.
@@ -21,7 +22,7 @@ public class ProtobufClientInitializer extends ChannelInitializer<SocketChannel>
         ChannelPipeline pipeline = ch.pipeline();
 
         pipeline.addLast(new ProtobufVarint32FrameDecoder());
-        pipeline.addLast(new ProtobufDecoder(AddressBookProtos.person.getDefaultInstance()));
+        pipeline.addLast(new ProtobufDecoder(MyDataInfo.Message.getDefaultInstance()));
         pipeline.addLast(new ProtobufVarint32LengthFieldPrepender());
         pipeline.addLast(new ProtobufEncoder());
 
