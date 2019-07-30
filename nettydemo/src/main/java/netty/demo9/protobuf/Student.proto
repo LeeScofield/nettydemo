@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package java.netty.demo8.model;
+
+option optimize_for = SPEED;
+option java_package = "netty.demo8.protobuf.model";
+option java_outer_classname = "StudentProto";
+option java_multiple_files = true;
+
+
+service StudentService{
+    rpc getRealNameByUserName (MyResquest) returns (MyResponse) {}
+}
+
+message MyResquest {
+    string userName = 1;
+}
+
+message MyResponse {
+    string realName = 1;
+}
